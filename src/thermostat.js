@@ -40,5 +40,21 @@ Thermostat.prototype = {
     if (this.currentTemperature === MAXIMUMTEMPERATURE){
       throw("Maximum temperature reached")
     }
+  },
+
+  resetTemperature: function() {
+    this.currentTemperature = 20;
+  },
+
+  energyUsage: function() {
+    if (this.currentTemperature < 18) {
+       console.log("Low-usage");
+    } else if (this.currentTemperature < 18 && this.currentTemperature < 25) {
+       console.log("Medium-usage");
+    } else if (this.currentTemperature > 25) {
+       console.log("High-usage");
   }
-};
+}
+
+
+}

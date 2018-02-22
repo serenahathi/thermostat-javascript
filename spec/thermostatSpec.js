@@ -55,5 +55,37 @@ describe("power saving mode off", function(){
   });
 })
 
+describe("temperature reset", function(){
+  beforeEach(function() {
+      thermostat = new Thermostat();
+  });
 
+  it("resets temperature to 20", function(){
+    thermostat.increaseTemperature();
+    thermostat.resetTemperature();
+    expect(thermostat.currentTemperature).toBe(20);
+  });
+})
+
+describe("energy usage", function(){
+  beforeEach(function() {
+      thermostat = new Thermostat();
+      thermostat.powerSavingMode = false;
+  });
+
+// it("returns 'low-usage' when temperature is less than 18 degrees", function(){
+//   // thermostat.currentTemperature = 17
+//   expect(thermostat.energyUsage).toBe("Low-usage");
+// });
+
+it("returns 'medium-usage' when temperature is greater than 18 degrees and less than 25  degrees", function(){
+  thermostat.currentTemperature = 22
+  expect(thermostat.energyUsage()).toEqual("Medium-usage");
 });
+
+// it("returns high-usage' when temperature greather than 25 degrees", function(){
+//   thermostat.currentTemperature = 27
+//   expect(thermostat.energyUsage).toBe("High-usage");
+// });
+});
+})
