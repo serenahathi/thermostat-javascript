@@ -43,7 +43,7 @@ describe("power saving mode off", function(){
 
   beforeEach(function() {
       thermostat = new Thermostat();
-      this.powerSavingMode = false;
+      thermostat.powerSavingMode = false;
   });
 
   it("temperature can be increased to a maximum of 32 degrees", function(){
@@ -51,7 +51,7 @@ describe("power saving mode off", function(){
         thermostat.increaseTemperature();
     }
     expect(thermostat.currentTemperature).toBe(32);
-    expect(function(){thermostat.increaseTemperature()}).toThrow("Maximum temperature reached");
+    expect(function(){thermostat.increaseTemperature()}).toThrow("PM OFF Maximum temperature reached");
   });
 })
 

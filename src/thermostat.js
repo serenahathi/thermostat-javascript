@@ -14,15 +14,14 @@ Thermostat.prototype = {
   },
 
   increaseTemperature: function() {
-    if (this.powerSavingMode === false && (this.currentTemperature === 32)) {
-      throw("Maximum temperature reached")}
+      if (this.powerSavingMode === false && this.currentTemperature === 32) {
+          throw("PM OFF Maximum temperature reached");
 
-    if (this.powerSavingMode === false && (this.currentTemperature < 32)) {
-      this.currentTemperature += 1;}
+      } else if (this.powerSavingMode === false && this.currentTemperature < 32) {
+          this.currentTemperature += 1
 
-    if (!this.maximumTemperatureCheck()) {
-       this.currentTemperature += 1;
-     }
+       } else if (!this.maximumTemperatureCheck()) {
+          this.currentTemperature += 1}
    },
 
   decreaseTemperature: function() {
