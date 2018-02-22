@@ -1,7 +1,9 @@
 var Thermostat = function(){
-  this.defaultTemperature = 20;
   this.currentTemperature = 20;
 };
+
+const MINIMUMTEMPERATURE = 10;
+const DEFAULTTEMPERATURE = 20;
 
 Thermostat.prototype = {
 
@@ -10,10 +12,19 @@ Thermostat.prototype = {
   },
 
   increaseTemperature: function() {
-    this.currentTemperature += 1
+    this.currentTemperature += 1;
   },
 
   decreaseTemperature: function() {
-    this.currentTemperature -= 1
+    if (!this.minimumTemperatureCheck()){
+      this.currentTemperature -= 1;
+    }
+  },
+
+  minimumTemperatureCheck: function() {
+    if (this.currentTemperature === MINIMUMTEMPERATURE){
+      throw("Minimum temperature reached")
+    }
   }
-}
+
+};
