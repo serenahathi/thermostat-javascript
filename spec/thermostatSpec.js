@@ -28,8 +28,32 @@ describe("changing temperature", function() {
     }
     expect(thermostat.currentTemperature).toBe(10);
     expect(function(){thermostat.decreaseTemperature()}).toThrow("Minimum temperature reached");
-  })
+  });
 
+  it("throws an error if user tries to increase temperature above 25", function(){
+    for (i = 1; i <= 5; i++) {
+        thermostat.increaseTemperature();
+    }
+    expect(thermostat.currentTemperature).toBe(25);
+    expect(function(){thermostat.increaseTemperature()}).toThrow("Maximum temperature reached");
+  })
 });
+
+describe("power saving mode off", function(){
+
+  beforeEach(function() {
+      thermostat = new Thermostat();
+      this.powerSavingMode = false;
+  });
+
+  it("temperature can be increased to a maximum of 32 degrees", function(){
+    for (i = 1; i <= 12; i++) {
+        thermostat.increaseTemperature();
+    }
+    expect(thermostat.currentTemperature).toBe(32);
+    expect(function(){thermostat.increaseTemperature()}).toThrow("Maximum temperature reached");
+  });
+})
+
 
 });
