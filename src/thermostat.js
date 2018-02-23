@@ -13,6 +13,22 @@ Thermostat.prototype = {
     return this.currentTemperature;
   },
 
+  isPowerSavingModeOn: function() {
+    return this.powerSavingMode;
+  },
+
+  // switchPowerSavingModeOff: function() {
+  //   this.powerSavingMode = false;
+  // },
+  //
+  // switchPowerSavingModeOn: function() {
+  //   this.powerSavingMode = true;
+  // },
+
+  switchPowerSavingMode: function() {
+    return this.powerSavingMode = !this.powerSavingMode
+  },
+
   increaseTemperature: function() {
       if (this.powerSavingMode === false && this.currentTemperature === 32) {
           throw("PM OFF Maximum temperature reached");
@@ -47,14 +63,14 @@ Thermostat.prototype = {
   },
 
   energyUsage: function() {
-    if (this.currentTemperature < 18) {
-       console.log("Low-usage");
-    } else if (this.currentTemperature < 18 && this.currentTemperature < 25) {
-       console.log("Medium-usage");
-    } else if (this.currentTemperature > 25) {
-       console.log("High-usage");
+    if (this.currentTemperature <= 18) {
+       return "Low-usage";
+    } else if (this.currentTemperature >= 18 && this.currentTemperature < 25) {
+       return "Medium-usage";
+    } else if (this.currentTemperature >= 25) {
+       return "High-usage";
   }
 }
 
 
-}
+};
