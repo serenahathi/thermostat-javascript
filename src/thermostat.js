@@ -17,28 +17,25 @@ Thermostat.prototype = {
     return this.powerSavingMode;
   },
 
-  // switchPowerSavingModeOff: function() {
-  //   this.powerSavingMode = false;
-  // },
-  //
-  // switchPowerSavingModeOn: function() {
-  //   this.powerSavingMode = true;
-  // },
+  increaseTemperature: function() {
+      if (this.powerSavingMode === true && this.currentTemperature < 25) {
+        this.currentTemperature += 1; 
+      } else if (this.powerSavingMode === false & this.currentTemperature < 32) {
+        this.currentTemperature +=1;
+        }
+      },
 
-  switchPowerSavingMode: function() {
-    return this.powerSavingMode = !this.powerSavingMode
+  minimumTemperatureCheck: function() {
+    if (this.currentTemperature === MINIMUMTEMPERATURE){
+      throw("Minimum temperature reached");
+    }
   },
 
-  increaseTemperature: function() {
-      if (this.powerSavingMode === false && this.currentTemperature === 32) {
-          throw("PM OFF Maximum temperature reached");
-
-      } else if (this.powerSavingMode === false && this.currentTemperature < 32) {
-          this.currentTemperature += 1
-
-       } else if (!this.maximumTemperatureCheck()) {
-          this.currentTemperature += 1}
-   },
+  // maximumTemperatureCheck: function() {
+  //   if (this.currentTemperature === MAXIMUMTEMPERATURE){
+  //     throw("Maximum temperature reached")
+  //   }
+  // },
 
   decreaseTemperature: function() {
     if (!this.minimumTemperatureCheck()){
@@ -46,20 +43,16 @@ Thermostat.prototype = {
     }
   },
 
-  minimumTemperatureCheck: function() {
-    if (this.currentTemperature === MINIMUMTEMPERATURE){
-      throw("Minimum temperature reached")
-    }
-  },
-
-  maximumTemperatureCheck: function() {
-    if (this.currentTemperature === MAXIMUMTEMPERATURE){
-      throw("Maximum temperature reached")
-    }
-  },
-
   resetTemperature: function() {
     this.currentTemperature = 20;
+  },
+
+  switchPowerSavingModeOff: function() {
+    this.powerSavingMode = false;
+  },
+  
+  switchPowerSavingModeOn: function() {
+    this.powerSavingMode = true;
   },
 
   energyUsage: function() {
@@ -69,8 +62,6 @@ Thermostat.prototype = {
        return "Medium-usage";
     } else if (this.currentTemperature >= 25) {
        return "High-usage";
+    }
   }
-}
-
-
 };

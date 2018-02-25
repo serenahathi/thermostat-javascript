@@ -1,33 +1,68 @@
 $(document).ready(function() {
+
   var thermostat = new Thermostat();
-  $('#temperature').text(thermostat.currentTemperature);
+  updateTemperature();
 
-  $('.increase').on('click', function() {
+  displayWeather('London');
+    $('#select-city').submit(function(event) {
+      event.preventDefault();
+      var city = $('#current-city').val();
+      displayWeather(city);
+    });
+
+  // var default_value = $(this).prop("defaultValue");
+ 
+
+  $('#increase').on('click', function() {
     thermostat.increaseTemperature();
-    $('#temperature').text(thermostat.currentTemperature);
+    updateTemperature();
   });
 
-  $('.decrease').on('click', function() {
+  $('#decrease').on('click', function() {
     thermostat.decreaseTemperature();
-    $('#temperature').text(thermostat.currentTemperature);
+    updateTemperature();
   });
 
-  $('.reset').on('click', function() {
+  $('#reset').on('click', function() {
     thermostat.resetTemperature();
-    $('#temperature').text(thermostat.currentTemperature);
+    updateTemperature();
   });
 
-  $('.reset').on('click', function() {
-    thermostat.resetTemperature();
-    $('#temperature').text(thermostat.currentTemperature);
+  $('#psm-on').on('click', function() {
+    $('#psm-on-alert').show();
+    thermostat.switchPowerSavingModeOn();
+    updateTemperature();
   });
-  // })
 
-// $(document).ready(function() {
-  // var thermostat = new Thermostat();
-  $('.switch').on('click', function() {
-    // PSM is on by default. Clicking on this turns it off
-    thermostat.switchPowerSavingMode();
+  $('#psm-off').on('click', function() {
+    $('#psm-on-alert').hide();
+    thermostat.switchPowerSavingModeOff();
+    updateTemperature();
+  });
+
+//   displayWeather('London');
+//   $('#select-city').submit(function(event)) 
+//   {event.preventDefault()};
+//   var city = $('#current-city').val();
+//   displayWeather(city);
+// });
+
+  function updateTemperature(){
     $('#temperature').text(thermostat.currentTemperature);
-  })
-})
+    $('#temperature').attr('class', thermostat.energyUsage());
+  }
+
+  function displayWeather(city) {
+    var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city;
+    var token = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed';
+    var units = '&units=metric';
+    $.get(url + token + units, function(data) {
+      $('#current-temperature').text(data.main.temp);
+    });
+  }
+
+
+});
+
+
+
