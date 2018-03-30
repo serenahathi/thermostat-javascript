@@ -1,4 +1,4 @@
-# Thermostat App (Week 5)
+# Thermostat App (Week 5)
 
 # Summary
 
@@ -26,8 +26,8 @@ Energy usage:
 
 # Installing
 
-```
-Run git clone https://github.com/serenahathi/bank-account-challenge.git
+``` 
+$ git clone https://github.com/serenahathi/thermostat-javascript.git
 ```
 ```
 Open thermostat.html in your browser of choice
