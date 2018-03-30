@@ -31,12 +31,6 @@ Thermostat.prototype = {
     }
   },
 
-  // maximumTemperatureCheck: function() {
-  //   if (this.currentTemperature === MAXIMUMTEMPERATURE){
-  //     throw("Maximum temperature reached")
-  //   }
-  // },
-
   decreaseTemperature: function() {
     if (!this.minimumTemperatureCheck()){
       this.currentTemperature -= 1;

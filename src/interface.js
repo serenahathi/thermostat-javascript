@@ -9,10 +9,7 @@ $(document).ready(function() {
       var city = $('#current-city').val();
       displayWeather(city);
     });
-
-  // var default_value = $(this).prop("defaultValue");
  
-
   $('#increase').on('click', function() {
     thermostat.increaseTemperature();
     updateTemperature();
@@ -40,13 +37,6 @@ $(document).ready(function() {
     updateTemperature();
   });
 
-//   displayWeather('London');
-//   $('#select-city').submit(function(event)) 
-//   {event.preventDefault()};
-//   var city = $('#current-city').val();
-//   displayWeather(city);
-// });
-
   function updateTemperature(){
     $('#temperature').text(thermostat.currentTemperature);
     $('#temperature').attr('class', thermostat.energyUsage());
@@ -60,8 +50,6 @@ $(document).ready(function() {
       $('#current-temperature').text(data.main.temp);
     });
   }
-
-
 });
 
 

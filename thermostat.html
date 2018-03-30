@@ -1,34 +1,26 @@
 <head>
-<link rel="stylesheet" type="text/css" href="index.css">
-<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 </head>
 <body>
-
-<section class="temperature-container">
-  <h1> Current temperature: <span id="current-temperature"></span>&#8451;</h1>
-  <form id="select-city">
-    <input id="current-city" type="text" placeholder="Enter a city"</input>
-    <input type="submit"></input>
-  </form>
-</section>
+  <section class="temperature-container">
+    <h1> Current temperature: <span id="current-temperature"></span>&#8451;</h1>
+    <form id="select-city">
+      <input id="current-city" type="text" placeholder="Enter a city"</input>
+      <input type="submit"></input>
+    </form>
+  </section>
   <div class="container">
-      <h1> Thermostat</h1>
-
-<h2><span id="temperature"></span> &#8451;</h2> 
-
-<button id='increase'>+</button>
-<button id='decrease'>-</button>
-<button id='reset'>Reset</button>
-
-<p><button id='psm-on'>PSM on</button></p>
-<button id='psm-off'>PSM off</button>
-
-<p id="psm-on-alert">PSM on</p>
-</div>
-
-
+    <h1> Thermostat</h1>
+    <h2><span id="temperature"></span> &#8451;</h2> 
+    <button id='increase'>+</button>
+    <button id='decrease'>-</button>
+    <button id='reset'>Reset</button>
+    <p><button id='psm-on'>PSM on</button></p>
+    <button id='psm-off'>PSM off</button>
+    <p id="psm-on-alert">PSM on</p>
+  </div>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
 <script src="src/thermostat.js"></script>
 <script src="src/interface.js"></script>
 </body>

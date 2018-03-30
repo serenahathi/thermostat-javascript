@@ -1,10 +1,29 @@
+body {
+  height: 950px;
+  font-family: 'Merriweather', serif;
+  background-color: #e6e6e6;
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
 p, #select-city {
   font-size: 20px;
-  color: white;
   text-align: center;
 }
 
+.container {
+  padding: 50px 120px 50px 120px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  background: #7474BF;  
+  background: -webkit-linear-gradient(to right, #348AC7, #7474BF);
+  background: linear-gradient(to right, #348AC7, #7474BF);
+}
 .temperature-container {
+
   padding: 50px 120px 50px 120px; 
   border-radius: 10px;
   border: 1px solid grey;
@@ -16,68 +35,52 @@ p, #select-city {
   background: linear-gradient(to right, #348AC7, #7474BF)
 }
 
-.container {
-  padding: 50px 120px 50px 120px;
-  border-radius: 10px;
-  border: 1px solid grey;
-  background: #7474BF;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-h1 {
-  font-size: 30px;
-  text-align: center;
-}
-
 h2 {
   font-size: 30px;
   text-align: center;
-  background-color: grey;
   border-radius: 10px;
   padding: 20px;
+
 }
 
 .low-usage {
 color: green;
 }
 
-.medium-usage{
+.medium-usage {
   color: #FFD700;
 }
 
-.high-usage{
+.high-usage {
   color:red;
 }
 
-body {
-  height: 950px;
+
+button {
+  /* display: inline; */
+  width: 100%;
+  text-align: center;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
   font-family: 'Merriweather', serif;
-  background-color: #e6e6e6;
-  position: absolute; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 15px;
+  margin: 1px;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: 'Merriweather', serif;
 }
 
- #increase {
-  margin: 20px;
-  margin-right: 25px;
-  padding: 10px;
+#increase {
   background: #009933;
   background-image: -webkit-linear-gradient(top, #009933, #009933);
   background-image: -moz-linear-gradient(top, #009933, #009933);
   background-image: -ms-linear-gradient(top, #009933, #009933);
   background-image: -o-linear-gradient(top, #009933, #009933);
   background-image: linear-gradient(to bottom, #009933, #009933);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: 'Merriweather', serif;
   color: #ffffff;
-  font-size: 32px;
-  /* padding: 10px 20px 10px 20px; */
-  /* margin: 10px; */
 }
 
 #increase:hover {
@@ -91,9 +94,6 @@ body {
 }
 
 #decrease {
-  margin: 20px;
-  margin-left: 30px;
-  padding: 10px;
   background: #e60000;
   background-image: -webkit-linear-gradient(top, #e60000, #e60000);
   background-image: -moz-linear-gradient(top, #e60000, #e60000);
@@ -103,10 +103,7 @@ body {
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
-  font-family: 'Merriweather', serif;
   color: #ffffff;
-  font-size: 32px;
-  text-decoration: none;
 }
 
 #decrease:hover {
@@ -120,8 +117,6 @@ body {
 }
 
 #reset {
-  margin: 5px;
-  width: 160px;
   background: #FFCC3D;
   background-image: -webkit-linear-gradient(top, #FFCC3D, #FFCC3D);
   background-image: -moz-linear-gradient(top, #FFCC3D, #FFCC3D);
@@ -133,11 +128,7 @@ body {
   border-radius: 28px;
   font-family: 'Merriweather', serif;
   color: #484848;
-  font-size: 20px;
-  text-decoration: none;
-  width: 70%;
-  text-align: center;
-  align-content: center;
+  
 }
 
 #reset:hover {
@@ -151,23 +142,13 @@ body {
 }
 
 #psm-on {
-  width: 160px;
-  margin-left: -40px;
   background: #4dbf28;
   background-image: -webkit-linear-gradient(top, #4dbf28, #4dbf28);
   background-image: -moz-linear-gradient(top, #4dbf28, #4dbf28);
   background-image: -ms-linear-gradient(top, #4dbf28, #4dbf28);
   background-image: -o-linear-gradient(top, #4dbf28, #4dbf28);
   background-image: linear-gradient(to bottom, #4dbf28, #4dbf28);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: 'Merriweather', serif;
-  font-size: 20px;
   color: #484848;
-  text-decoration: none;
-  text-align: center;
-  align-content: center;
 }
 
 #psm-on:hover {
@@ -181,20 +162,13 @@ body {
 }
 
 #psm-off {
-  width: 160px;
   background: #f4425c;
   background-image: -webkit-linear-gradient(top, #f4425c, #f4425c);
   background-image: -moz-linear-gradient(top, #f4425c, #f4425c);
   background-image: -ms-linear-gradient(top, #f4425c, #f4425c);
   background-image: -o-linear-gradient(top, #f4425c, #f4425c);
   background-image: linear-gradient(to bottom, #f4425c, #f4425c);
-  -webkit-border-radius: 28px;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: 'Merriweather', serif;
   color: #484848;
-  font-family: 30px;
-  font-size: 20px;
 }
 
 #psm-off:hover {
