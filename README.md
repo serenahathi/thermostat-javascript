@@ -2,11 +2,11 @@
 
 # Summary
 
-A thermostat app built in JavaScript and jQuery and tested using Jasmine.
+A thermostat app built using JavaScript, jQuery, the [OpenWeatherMap API](https://openweathermap.org/api), HTML, CSS and tested using Jasmine.
 
 Demo:
 
-<img src="https://media.giphy.com/media/fWfEPIyrUrFXwsOM2B/giphy.gif">
+<img src="https://media.giphy.com/media/kiJhWqXMzHCBAZnIKi/giphy.gif">
 
 # Specification
 
@@ -26,6 +26,7 @@ Energy usage:
 
 # Installing
 
+Run the following command in the terminal:
 ``` 
 $ git clone https://github.com/serenahathi/thermostat-javascript.git
 ```
