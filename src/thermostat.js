@@ -18,12 +18,16 @@ Thermostat.prototype = {
   },
 
   increaseTemperature: function() {
-      if (this.powerSavingMode === true && this.currentTemperature < 25) {
-        this.currentTemperature += 1; 
-      } else if (this.powerSavingMode === false & this.currentTemperature < 32) {
+    if (this.powerSavingMode === true && this.currentTemperature < 25) {
+      this.currentTemperature += 1; 
+    } else if (this.powerSavingMode === true && this.currentTemperature == 25) {
+        throw("Maximum temperature reached");
+    } else if (this.powerSavingMode === false & this.currentTemperature < 32) {
         this.currentTemperature +=1;
-        }
-      },
+    } else if (this.powerSavingMode === false & this.currentTemperature == 32) { 
+        throw("PM OFF Maximum temperature reached");
+    }
+  },
 
   minimumTemperatureCheck: function() {
     if (this.currentTemperature === MINIMUMTEMPERATURE){

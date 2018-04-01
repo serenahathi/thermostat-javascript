@@ -4,11 +4,11 @@ $(document).ready(function() {
   updateTemperature();
 
   displayWeather('London');
-    $('#select-city').submit(function(event) {
-      event.preventDefault();
-      var city = $('#current-city').val();
-      displayWeather(city);
-    });
+  $('#select-city').submit(function(event) {
+    event.preventDefault();
+    var city = $('#current-city').val();
+    displayWeather(city);
+  });
  
   $('#increase').on('click', function() {
     thermostat.increaseTemperature();
@@ -47,7 +47,7 @@ $(document).ready(function() {
     var token = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed';
     var units = '&units=metric';
     $.get(url + token + units, function(data) {
-      $('#current-temperature').text(data.main.temp);
+      $('#current-temperature').text("The current temperature in " + city + " is " + data.main.temp);
     });
   }
 });
